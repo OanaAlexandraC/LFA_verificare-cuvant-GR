@@ -1,16 +1,13 @@
-version: 2.0
-jobs:
-build_gcc_latest:
-docker:
-- image: gcc:latest
-steps:
-- checkout
-- run: mkdir -p build && cd build
-- run: g++ -o main main.cpp -std=c++11
-- run: ./main
-
-workflows:
 version: 2
-build:
 jobs:
-- build_gcc_latest
+  build:
+    docker:
+      - image: debian:stretch
+    steps:
+      - checkout
+      - run:
+          name: Greeting
+          command: echo Hello, world.
+      - run:
+          name: Print the Current Time
+          command: date
