@@ -16,7 +16,7 @@ public:
 
     ~GramaticaRegulata();
 
-    //void afisare();
+    void afisare();
 
     //bool verificare(char *cuvant);
 };

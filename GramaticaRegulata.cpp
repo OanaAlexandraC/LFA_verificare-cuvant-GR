@@ -1,4 +1,5 @@
 #include <fstream>
+#include <iostream>
 #include "GramaticaRegulata.h"
 
 using namespace std;
@@ -37,4 +38,24 @@ GramaticaRegulata::~GramaticaRegulata() {
     delete[] simboluriNeterminale;
     delete[] simboluriTerminale;
     delete[] reguliDeProductie;
+}
+
+/**
+ * afisare gramatica regulata
+ */
+void GramaticaRegulata::afisare() {
+    int i;
+    cout << numarSimboluriNeterminale << endl;
+    for (i = 0; i < numarSimboluriNeterminale; i++)
+        cout << simboluriNeterminale[i] << ' ';
+    cout << endl << numarSimboluriTerminale << endl;
+    for (i = 0; i < numarSimboluriTerminale; i++)
+        cout << simboluriTerminale[i] << ' ';
+    cout << endl << numarProductii << endl;
+    for (i = 0; i < numarProductii; i++) {
+        cout << reguliDeProductie[i].simbolNeterminal1 << ' ';
+        cout << reguliDeProductie[i].simbolTerminal << ' ';
+        cout << reguliDeProductie[i].simbolNeterminal2 << endl;
+    }
+    cout << simbolCurent;
 }
