@@ -41,6 +41,14 @@ GramaticaRegulata::~GramaticaRegulata() {
 }
 
 /**
+ * metoda de reinitializare a simbolului curent (de start)
+ */
+void GramaticaRegulata::reinitializareSimbolCurent() {
+    simbolCurent = 'S';
+}
+
+
+/**
  * afisare gramatica regulata
  */
 void GramaticaRegulata::afisare() {

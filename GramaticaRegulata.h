@@ -16,6 +16,8 @@ public:
 
     ~GramaticaRegulata();
 
+    void reinitializareSimbolCurent();
+
     void afisare();
 
     bool verificare(char *cuvant);
