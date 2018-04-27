@@ -29,3 +29,12 @@ GramaticaRegulata::GramaticaRegulata(const char *fisier) {
     f.close();
     simbolCurent = 'S'; //simbolul de start este mereu S
 }
+
+/**
+ * destructor
+ */
+GramaticaRegulata::~GramaticaRegulata() {
+    delete[] simboluriNeterminale;
+    delete[] simboluriTerminale;
+    delete[] reguliDeProductie;
+}

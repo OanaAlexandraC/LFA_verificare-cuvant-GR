@@ -14,7 +14,7 @@ class GramaticaRegulata {
 public:
     explicit GramaticaRegulata(const char *fisier);
 
-    //~GramaticaRegulata();
+    ~GramaticaRegulata();
 
     //void afisare();
 
