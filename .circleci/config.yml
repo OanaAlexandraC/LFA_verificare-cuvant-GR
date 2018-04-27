@@ -5,9 +5,9 @@ jobs:
       - image: gcc:latest
     steps:
       - checkout
-      - run: mkdir -p build && cd build
-      - run: g++ -o main main.cpp -std=c++11
-      - run: ./main
+      - run:  mkdir -p build && cd build
+      - run:  g++ -o main main.cpp -std=c++11
+      - run:  ./main
 
 workflows:
   version: 2
