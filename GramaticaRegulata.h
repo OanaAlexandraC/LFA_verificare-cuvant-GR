@@ -12,7 +12,7 @@ class GramaticaRegulata {
     } *reguliDeProductie;
     char simbolCurent;
 public:
-    //explicit GramaticaRegulata(const char *fisier);
+    explicit GramaticaRegulata(const char *fisier);
 
     //~GramaticaRegulata();
 
