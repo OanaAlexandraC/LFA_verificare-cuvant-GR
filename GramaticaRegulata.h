@@ -18,7 +18,7 @@ public:
 
     void afisare();
 
-    //bool verificare(char *cuvant);
+    bool verificare(char *cuvant);
 };
 
 #endif

@@ -59,3 +59,38 @@ void GramaticaRegulata::afisare() {
     }
     cout << simbolCurent;
 }
+
+/**
+ * metoda de verificare a unui cuvant
+ * @param cuvantul ce va fi verificat
+ * @return true, in cazul in care cuvantul apartine limbajului generat de gramatica si false, in caz contrar
+ */
+bool GramaticaRegulata::verificare(char *cuvant) {
+    int i;
+    if (cuvant[0] == NULL) //daca am ajuns la sfarsitul cuvantului
+    {
+        if (simbolCurent == '_')
+            return true;
+        for (i = 0; i < numarProductii; i++) {
+            if ((reguliDeProductie[i].simbolNeterminal1 == simbolCurent) &&
+                (reguliDeProductie[i].simbolTerminal == '_') &&
+                (reguliDeProductie[i].simbolNeterminal2 == '_'))
+                //daca avem o productie de tipul simbol curent -> gramatica generata de cuvantul vid
+                return true; //cuvantul apartine limbajului generat de gramatica
+        }
+        return false; //altfel nu apartine
+    } else //nu am ajuns la sfarsitul cuvantului
+    {
+        char simbolAuxiliar = simbolCurent;
+        for (i = 0; i < numarProductii; i++)
+            if ((reguliDeProductie[i].simbolNeterminal1 == simbolAuxiliar) &&
+                (reguliDeProductie[i].simbolTerminal == cuvant[0]))
+                //caut regulile de productie de forma (simbol curent) -> (caracterul la care am ajuns) sau
+                // (simbol curent) -> (caracterul la care am ajuns) (simbol neterminal)
+            {
+                simbolCurent = reguliDeProductie[i].simbolNeterminal2;
+                if (verificare(cuvant + 1)) return true; //verific pentru cuvantul din care lipseste prima litera
+            }
+        return false;
+    }
+}
