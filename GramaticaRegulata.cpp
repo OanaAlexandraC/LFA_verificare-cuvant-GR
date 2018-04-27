@@ -75,7 +75,7 @@ void GramaticaRegulata::afisare() {
  */
 bool GramaticaRegulata::verificare(char *cuvant) {
     int i;
-    if (cuvant[0] == NULL) //daca am ajuns la sfarsitul cuvantului
+    if (cuvant[0] == '\0') //daca am ajuns la sfarsitul cuvantului
     {
         if (simbolCurent == '_')
             return true;
